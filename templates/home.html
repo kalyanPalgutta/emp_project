@@ -1,0 +1,49 @@
+{% extends 'Links.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home.css' %}"/>
+{% block content %}
+ 
+<div class="container ">
+  
+<br><br>
+ 
+<div class="row">
+    <div class="col-md-9">
+        <h5 style="color: chocolate">Employee Details:</h5>
+        
+        <div class="card card-body ">
+            
+            <table style="background-color: darkgray" class="table table-sm">
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Employee Name</th>
+                    <th>Designation</th>      
+                    <th>Joined Date</th>      
+                    <th>Address</th>      
+                    <th>Phone</th>      
+                    <th>EMail</th>
+                    <th>Salary</th>
+                    <th>Working Days</th>
+                    
+                </tr>
+                {% for e in details %}
+                <tr>
+                    <td>{{e.EmployeeId}} </td>
+                    <td>{{e.EmployeeName}} </td>
+                    <td>{{e.Designation}} </td>
+                    <td>{{e.JoinedDate}} </td>
+                    <td>{{e.Address}} </td>
+                    <td>{{e.Phone}} </td>
+                    <td>{{e.EMail}} </td>
+                    <td>{{e.Salary}} </td>
+                    <td>{{e.WorkingDays}} </td>
+                    
+                </tr>
+                {% endfor %}
+            </table>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+Admin Home Page:
